@@ -1,0 +1,105 @@
+/* Case pages (mantém identidade do styles.css) */
+
+.case-hero{
+  text-align: center;
+  padding: 10px 0 26px;
+}
+
+.case-back{
+  display: inline-block;
+  margin-bottom: 14px;
+  font-size: 13px;
+  color: rgba(255,255,255,.70);
+  border-bottom: 1px solid rgba(255,255,255,.12);
+  padding-bottom: 4px;
+}
+.case-back:hover{ color: rgba(255,255,255,.92); }
+
+.case-logo{ margin-bottom: 16px; }
+
+.case-title{
+  margin: 0 0 10px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  font-size: clamp(28px, 4.6vw, 46px);
+  line-height: 1.08;
+}
+
+.case-subtitle{
+  margin: 0 auto 18px;
+  max-width: 720px;
+  font-size: 14px;
+  line-height: 1.55;
+  color: rgba(255,255,255,.86);
+}
+.muted{ color: rgba(255,255,255,.60); }
+
+.case-actions{
+  display: inline-flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+  margin-top: 6px;
+}
+
+.case-section{
+  padding: 18px 0 26px;
+}
+
+.case-h2{
+  text-align: left;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 16px 0 12px;
+}
+
+.video-wrap{
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.10);
+  background: #101010;
+  aspect-ratio: 16 / 9;
+}
+.video-wrap iframe{
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Galeria editorial */
+.shots{
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(12, 1fr);
+}
+
+.shot{
+  margin: 0;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.08);
+  background: #101010;
+  grid-column: span 6;
+}
+
+.shot--big{
+  grid-column: span 12;
+}
+
+.shot img{
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+/* Alternância “editorial” automática:
+   - Em telas grandes, o padrão já alterna via shot--big
+   - Em telas médias, mantém 2 colunas
+*/
+@media (max-width: 860px){
+  .shots{ grid-template-columns: repeat(6, 1fr); }
+  .shot{ grid-column: span 6; }
+  .shot--big{ grid-column: span 6; }
+}
